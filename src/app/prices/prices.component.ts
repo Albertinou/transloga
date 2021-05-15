@@ -9,22 +9,25 @@ import { PricesService } from 'src/app/service/prices.service';
 export class PricesComponent implements OnInit {
   employee: string;
   employeeName: string;
-  employeeAge: number;
-  employeeAddress: string;
+  shippingPrice: number;
+  loadingPort: string;
+  destinationPort: string;
   message: string;
   constructor(public pricesservice:PricesService) { }
 
   CreateRecord(){
     let Record = {};
-    Record['name'] = this.employeeName;
-    Record['age'] = this.employeeAge;
-    Record['address'] = this.employeeAddress;
+    Record['company'] = this.employeeName;
+    Record['price'] = this.shippingPrice;
+    Record['loadingPort'] = this.loadingPort;
+    Record['destinationPort'] = this.destinationPort;
 
     this.pricesservice.create_Newemployee(Record).then(res => {
       
       this.employeeName = "";
-      this.employeeAge = undefined;
-      this.employeeAddress= "";
+      this.shippingPrice = undefined;
+      this.loadingPort= "";
+      this.destinationPort= "";
       console.log(res);
       this.message = "New price added";
     }).catch(error => {

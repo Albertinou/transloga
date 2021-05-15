@@ -3,16 +3,19 @@
         <h1>Prices crud component</h1>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="employeeName" placeholder="Enter Shipping Line">
+        <input type="text" class="form-control" [(ngModel)]="employeeName" placeholder="Enter Shipping Line Name">
     </div>
     <div class="form-group">
-        <input type="number" class="form-control" [(ngModel)]="employeeAge" placeholder="Enter Price">
+        <input type="number" class="form-control" [(ngModel)]="shippingPrice" placeholder="Enter Price">
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="employeeAddress" placeholder="Enter Port Location">
+        <input type="text" class="form-control" [(ngModel)]="loadingPort" placeholder="Enter Loading Port">
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!employeeName || !employeeAge || !employeeAddress">Create price</button>
+        <input type="text" class="form-control" [(ngModel)]="destinationPort" placeholder="Enter Destination Port">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!employeeName || !shippingPrice || !loadingPort || !destinationPort">Create price</button>
     </div>
     <div class="form-group">
         <h4><b>{{ message }}</b></h4>
