@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "translogaprices": {
+      "hosting": {
+        "transloga": [
+          "translogaprices"
+        ]
+      }
+    }
+  }
+}
