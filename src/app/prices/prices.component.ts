@@ -7,9 +7,10 @@ import { PricesService } from 'src/app/service/prices.service';
   styleUrls: ['./prices.component.scss']
 })
 export class PricesComponent implements OnInit {
-  employee: string;
-  employeeName: string;
-  shippingPrice: number;
+  price: string;
+  companyName: string;
+  shippingPriceTwenty: number;
+  shippingPriceFourty: number;
   loadingPort: string;
   destinationPort: string;
   message: string;
@@ -17,15 +18,17 @@ export class PricesComponent implements OnInit {
 
   CreateRecord(){
     let Record = {};
-    Record['company'] = this.employeeName;
-    Record['price'] = this.shippingPrice;
+    Record['company'] = this.companyName;
+    Record['priceTwenty'] = this.shippingPriceTwenty;
+    Record['priceFourty'] = this.shippingPriceFourty;
     Record['loadingPort'] = this.loadingPort;
     Record['destinationPort'] = this.destinationPort;
 
     this.pricesservice.create_Newemployee(Record).then(res => {
       
-      this.employeeName = "";
-      this.shippingPrice = undefined;
+      this.companyName = "";
+      this.shippingPriceTwenty = undefined;
+      this.shippingPriceFourty = undefined;
       this.loadingPort= "";
       this.destinationPort= "";
       console.log(res);

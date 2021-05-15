@@ -3,10 +3,13 @@
         <h1>Prices crud component</h1>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="employeeName" placeholder="Enter Shipping Line Name">
+        <input type="text" class="form-control" [(ngModel)]="companyName" placeholder="Enter Shipping Line Name">
     </div>
     <div class="form-group">
-        <input type="number" class="form-control" [(ngModel)]="shippingPrice" placeholder="Enter Price">
+        <input type="number" class="form-control" [(ngModel)]="shippingPriceTwenty" placeholder="Enter Price for 20 foot container">
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control" [(ngModel)]="shippingPriceFourty" placeholder="Enter Price for 40 foot container">
     </div>
     <div class="form-group">
         <input type="text" class="form-control" [(ngModel)]="loadingPort" placeholder="Enter Loading Port">
@@ -15,7 +18,7 @@
         <input type="text" class="form-control" [(ngModel)]="destinationPort" placeholder="Enter Destination Port">
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!employeeName || !shippingPrice || !loadingPort || !destinationPort">Create price</button>
+        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!companyName || !shippingPriceTwenty || !loadingPort || !destinationPort || !shippingPriceFourty">Create price</button>
     </div>
     <div class="form-group">
         <h4><b>{{ message }}</b></h4>
