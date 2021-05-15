@@ -32,7 +32,7 @@ export class PricesComponent implements OnInit {
       this.loadingPort= "";
       this.destinationPort= "";
       console.log(res);
-      this.message = "New price added";
+      this.message = "New price added to firebase database";
     }).catch(error => {
       console.log(error);
     })
