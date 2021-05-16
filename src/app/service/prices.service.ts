@@ -10,4 +10,8 @@ export class PricesService {
   create_Newemployee(Record){
     return this.fireservices.collection('prices').add(Record);
   }
+
+  get_Allprices(){
+    return this.fireservices.collection('prices').snapshotChanges();
+  }
 }

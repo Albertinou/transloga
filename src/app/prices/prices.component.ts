@@ -7,13 +7,15 @@ import { PricesService } from 'src/app/service/prices.service';
   styleUrls: ['./prices.component.scss']
 })
 export class PricesComponent implements OnInit {
-  price: string;
+  price: any;
   companyName: string;
   shippingPriceTwenty: number;
   shippingPriceFourty: number;
   loadingPort: string;
   destinationPort: string;
   message: string;
+  
+  
   constructor(public pricesservice:PricesService) { }
 
   CreateRecord(){
@@ -39,6 +41,21 @@ export class PricesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.pricesservice.get_Allprices().subscribe(data =>{
+      this.price = data.map(e =>{
+        return{
+          id: e.payload.doc.id,
+          company: e.payload.doc.data()['company'],
+          priceTwenty: e.payload.doc.data()['priceTwenty'],
+          priceFourty: e.payload.doc.data()['priceFourty'],
+          loadingPort: e.payload.doc.data()['loadingPort'],
+          destinationPort: e.payload.doc.data()['destinationPort']
+        }
+      });
+      console.log(this.price);
+      
+      
+    });
   }
 
 }
