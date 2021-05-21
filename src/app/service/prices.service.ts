@@ -7,7 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class PricesService {
 
   constructor(public fireservices:AngularFirestore) { }
-  create_Newemployee(Record){
+  create_Newprice(Record){
     return this.fireservices.collection('prices').add(Record);
   }
 

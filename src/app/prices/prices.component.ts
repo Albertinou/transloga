@@ -26,7 +26,7 @@ export class PricesComponent implements OnInit {
     Record['loadingPort'] = this.loadingPort;
     Record['destinationPort'] = this.destinationPort;
 
-    this.pricesservice.create_Newemployee(Record).then(res => {
+    this.pricesservice.create_Newprice(Record).then(res => {
       
       this.companyName = "";
       this.shippingPriceTwenty = undefined;
@@ -40,11 +40,22 @@ export class PricesComponent implements OnInit {
     })
   }
 
+  EditRecord(Record){
+    Record.isedit = true;
+    Record.editCompany = Record.company;
+    Record.editPriceTwenty = Record.priceTwenty;
+    Record.editPriceFourty = Record.priceFourty;
+    Record.editLoadingPort = Record.loadingPort;
+    Record.editDestinationPort = Record.destinationPort;
+
+  }
+
   ngOnInit(): void {
     this.pricesservice.get_Allprices().subscribe(data =>{
       this.price = data.map(e =>{
         return{
           id: e.payload.doc.id,
+          isedit: false,
           company: e.payload.doc.data()['company'],
           priceTwenty: e.payload.doc.data()['priceTwenty'],
           priceFourty: e.payload.doc.data()['priceFourty'],
