@@ -1,18 +1,1 @@
 
-@media only screen and (min-width: 1200px) {
-    .picsum-img-wrapper {
-      display:flex;
-      align-items:center;
-    }
-  }
-
-.picsum-img-wrapper {
-    width: 100vw;
-    height: 93vh;
-}
-
-ngb-carousel {
-    h3{
-        font-size: 70px;
-    }
-}
