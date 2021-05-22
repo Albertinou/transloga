@@ -13,6 +13,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { PricesService } from './service/prices.service';
 import { CardsComponent } from './cards/cards.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CardsComponent } from './cards/cards.component';
     NavComponent,
     NgbdCarouselBasic,
     PricesComponent,
-    CardsComponent
+    CardsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
