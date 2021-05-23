@@ -20,11 +20,13 @@ export class PricesComponent implements OnInit {
 
   CreateRecord(){
     let Record = {};
-    Record['company'] = this.companyName;
-    Record['priceTwenty'] = this.shippingPriceTwenty;
-    Record['priceFourty'] = this.shippingPriceFourty;
     Record['loadingPort'] = this.loadingPort;
     Record['destinationPort'] = this.destinationPort;
+    Record['priceTwenty'] = this.shippingPriceTwenty;
+    Record['priceFourty'] = this.shippingPriceFourty;
+    Record['company'] = this.companyName;
+    
+    
 
     this.pricesservice.create_Newprice(Record).then(res => {
       
@@ -42,11 +44,26 @@ export class PricesComponent implements OnInit {
 
   EditRecord(Record){
     Record.isedit = true;
-    Record.editLoadingPort = Record.loadingPort;
+    Record.editloadingport = Record.loadingPort;
     Record.editDestinationPort = Record.destinationPort;
     Record.editPriceTwenty = Record.priceTwenty;
     Record.editPriceFourty = Record.priceFourty;
     Record.editCompany = Record.company;
+  }
+
+  updaterecord(Recorddata){
+    let record = {};
+    record['loadingPort'] = Recorddata.editloadingport;
+    record['destinationPort'] = Recorddata.editDestinationPort;
+    record['priceTwenty'] = Recorddata.editPriceTwenty;
+    record['priceFourty'] = Recorddata.editPriceFourty;
+    record['company'] = Recorddata.editCompany;
+    this.pricesservice.update_price(Recorddata.id, record);
+    Recorddata.isedit = false;
+  }
+
+  DeleteRecord(record_id){
+    this.pricesservice.delete_price(record_id);
   }
 
   ngOnInit(): void {

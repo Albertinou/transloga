@@ -50,7 +50,7 @@
                 <td>{{ item.priceFourty }}</td>
                 <td>{{ item.company }}</td>
                 <td><a href="#" (click)="EditRecord(item)" class="btn btn-primary">Edit</a></td>
-                <td><a href="#" (click)="deleteRecord(item.id)" class="btn btn-danger">Delete</a></td>
+                <td><a href="#" (click)="DeleteRecord(item.id)" class="btn btn-danger">Delete</a></td>
             </ng-container>
             </tr>
         </tbody>
@@ -58,9 +58,10 @@
 
 
     <ng-template #elseBlock>
-
+                    
+                    
                     <td class="form-group">
-                        <input type="text" [(ngModel)]="item.editLoadingPort" class="form-control">
+                        <input type="text" [(ngModel)]="item.editloadingport" class="form-control">
                     </td>
                     <td class="form-group">
                         <input type="text" [(ngModel)]="item.editDestinationPort" class="form-control">
@@ -75,6 +76,9 @@
                         <input type="text" [(ngModel)]="item.editCompany" class="form-control">
                     </td>
 
+                    <td><a href="#" (click)="updateRecord(item)" class="btn btn-primary">Update</a></td>
+                    <td><a href="#" (click)="item.isedit = false" class="btn btn-danger">Cancel</a></td>
+                    
     </ng-template>
 
 </div>
