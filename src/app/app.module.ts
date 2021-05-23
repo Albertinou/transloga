@@ -11,9 +11,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { PricesService } from './service/prices.service';
+import { PricesService } from './services/prices.service';
 import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [

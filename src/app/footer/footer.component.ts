@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  email : string;
+  password: string;
+
+  constructor(public auth: AngularFireAuth) { }
 
   ngOnInit(): void {
-  }
+}
 
+  login(){
+    
+    this.auth.signInWithEmailAndPassword(this.email,this.password)
+    .catch(error => console.log(error.code))
+    .then(res => console.log(res));
+  }
 }

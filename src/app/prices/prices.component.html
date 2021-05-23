@@ -42,7 +42,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of price">
-
+                <ng-container *ngIf="!item.isedit; else elseBlock">
 
                 <td>{{ item.loadingPort }}</td>
                 <td>{{ item.destinationPort }}</td>
@@ -50,38 +50,31 @@
                 <td>{{ item.priceFourty }}</td>
                 <td>{{ item.company }}</td>
                 <td><a href="#" (click)="EditRecord(item)" class="btn btn-primary">Edit</a></td>
-                <td><a href="#" class="btn btn-danger">Delete</a></td>
-
+                <td><a href="#" (click)="deleteRecord(item.id)" class="btn btn-danger">Delete</a></td>
+            </ng-container>
             </tr>
         </tbody>
     </table>
 
 
     <ng-template #elseBlock>
-        <table class="table table-striped">
 
-            <tbody>
-                <tr>
-                    <td>
+                    <td class="form-group">
                         <input type="text" [(ngModel)]="item.editLoadingPort" class="form-control">
                     </td>
-                    <td>
+                    <td class="form-group">
                         <input type="text" [(ngModel)]="item.editDestinationPort" class="form-control">
                     </td>
-                    <td>
+                    <td class="form-group">
                         <input type="number" [(ngModel)]="item.editPriceTwenty" class="form-control">
                     </td>
-                    <td>
+                    <td class="form-group">
                         <input type="number" [(ngModel)]="item.editPriceFourty" class="form-control">
                     </td>
-                    <td>
+                    <td class="form-group">
                         <input type="text" [(ngModel)]="item.editCompany" class="form-control">
                     </td>
 
-                </tr>
-
-            </tbody>
-        </table>
     </ng-template>
 
 </div>

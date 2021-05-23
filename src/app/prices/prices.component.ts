@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PricesService } from 'src/app/service/prices.service';
+import { PricesService } from 'src/app/services/prices.service';
 
 @Component({
   selector: 'app-prices',
@@ -42,12 +42,11 @@ export class PricesComponent implements OnInit {
 
   EditRecord(Record){
     Record.isedit = true;
-    Record.editCompany = Record.company;
-    Record.editPriceTwenty = Record.priceTwenty;
-    Record.editPriceFourty = Record.priceFourty;
     Record.editLoadingPort = Record.loadingPort;
     Record.editDestinationPort = Record.destinationPort;
-
+    Record.editPriceTwenty = Record.priceTwenty;
+    Record.editPriceFourty = Record.priceFourty;
+    Record.editCompany = Record.company;
   }
 
   ngOnInit(): void {
@@ -63,7 +62,7 @@ export class PricesComponent implements OnInit {
           destinationPort: e.payload.doc.data()['destinationPort']
         }
       });
-      console.log(this.price);
+      
       
       
     });
