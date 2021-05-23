@@ -42,24 +42,25 @@ export class PricesComponent implements OnInit {
     })
   }
 
-  EditRecord(Record){
-    Record.isedit = true;
-    Record.editloadingport = Record.loadingPort;
-    Record.editDestinationPort = Record.destinationPort;
-    Record.editPriceTwenty = Record.priceTwenty;
-    Record.editPriceFourty = Record.priceFourty;
-    Record.editCompany = Record.company;
+  EditRecord(record){
+    console.log(record);
+    record.isedit = true;
+    record.editloadingport = record.loadingPort;
+    record.editDestinationPort = record.destinationPort;
+    record.editPriceTwenty = record.priceTwenty;
+    record.editPriceFourty = record.priceFourty;
+    record.editCompany = record.company;
   }
 
-  updaterecord(Recorddata){
+  updaterecord(recorddata){
     let record = {};
-    record['loadingPort'] = Recorddata.editloadingport;
-    record['destinationPort'] = Recorddata.editDestinationPort;
-    record['priceTwenty'] = Recorddata.editPriceTwenty;
-    record['priceFourty'] = Recorddata.editPriceFourty;
-    record['company'] = Recorddata.editCompany;
-    this.pricesservice.update_price(Recorddata.id, record);
-    Recorddata.isedit = false;
+    record['loadingPort'] = recorddata.editloadingport;
+    record['destinationPort'] = recorddata.editDestinationPort;
+    record['priceTwenty'] = recorddata.editPriceTwenty;
+    record['priceFourty'] = recorddata.editPriceFourty;
+    record['company'] = recorddata.editCompany;
+    this.pricesservice.update_price(recorddata.id, record);
+    recorddata.isedit = false;
   }
 
   DeleteRecord(record_id){
