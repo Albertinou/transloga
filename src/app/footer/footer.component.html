@@ -60,22 +60,7 @@
           <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
         </div>
         <!-- Grid column -->
-
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Admin login
-          </h6>
-          Email: <input name="email" [(ngModel)]="email"  type="text /">
-          Password: <input name="password"[(ngModel)]="password" type="text /">
-          <p></p>
-          <button (click)="login()" class="btn btn-primary">Login</button>
-          
-        </div>
-        <!-- Grid column -->
-     
+    
         
           <form class="text-center border border-light col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
         
@@ -84,16 +69,16 @@
             </h6>
         
             <!-- Email -->
-            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+            <input name="email" [(ngModel)]="email" type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
         
             <!-- Password -->
-            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+            <input name="password" [(ngModel)]="password" type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
         
             <div class="d-flex justify-content-around">
             </div>
         
             <!-- Sign in button -->
-            <button mdbBtn  block="true" class="btn btn-primary" type="submit">Login</button>
+            <button (click)="login()" mdbBtn  block="true" class="btn btn-primary" type="submit">Login</button>
 
           </form>
         </div>
