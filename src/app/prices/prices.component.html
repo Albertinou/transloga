@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="prices">
     <div class="row justify-content-center p-2">
         <h1>Prices crud component</h1>
     </div>
@@ -55,8 +55,8 @@
 
         <td>{{ item.loadingPort  }}</td>
         <td>{{ item.destinationPort }}</td>
-        <td>{{ item.priceTwenty | currency : USD }}</td>
-        <td>{{ item.priceFourty | currency : USD }}</td>
+        <td>{{ item.priceTwenty | currency:'USD':true:'4.0-2'}}</td>
+        <td>{{ item.priceFourty | currency:'USD':true:'4.0-2'}}</td>
         <td>{{ item.company }}</td>
 
         <td><button (click)="EditRecord(item)" class="btn btn-primary">Edit</button></td>

@@ -15,6 +15,7 @@ import { PricesService } from './services/prices.service';
 import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
 import { PricetableComponent } from './pricetable/pricetable.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PricetableComponent } from './pricetable/pricetable.component';
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NgxPageScrollCoreModule.forRoot({duration: 1000})
    
     
   ],
