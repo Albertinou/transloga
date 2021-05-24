@@ -42,7 +42,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of price">
-                <ng-container [ngTemplateOutlet]="item.isedit == true ? editable : display"
+                <ng-container 
+                    [ngTemplateOutlet]="item.isedit == true ? editable : display"
                     [ngTemplateOutletContext]="{ item: item }">
                 </ng-container>
             </tr>
@@ -52,14 +53,14 @@
 
     <ng-template #display let-item="item">
 
-        <td>{{ item.loadingPort }}</td>
+        <td>{{ item.loadingPort  }}</td>
         <td>{{ item.destinationPort }}</td>
-        <td>{{ item.priceTwenty }}</td>
-        <td>{{ item.priceFourty }}</td>
+        <td>{{ item.priceTwenty | currency : USD }}</td>
+        <td>{{ item.priceFourty | currency : USD }}</td>
         <td>{{ item.company }}</td>
 
-        <td><a href="#" (click)="EditRecord(item)" class="btn btn-primary">Edit</a></td>
-        <td><a href="#" (click)="DeleteRecord(item.id)" class="btn btn-danger">Delete</a></td>
+        <td><button (click)="EditRecord(item)" class="btn btn-primary">Edit</button></td>
+        <td><button (click)="DeleteRecord(item.id)" class="btn btn-danger">Delete</button></td>
     </ng-template>
     <ng-template #editable let-item="item">
         <td class="form-group">
@@ -78,7 +79,7 @@
             <input type="text" [(ngModel)]="item.editCompany" class="form-control">
         </td>
 
-        <td><a href="#" (click)="updaterecord(item)" class="btn btn-primary">Update</a></td>
-        <td><a href="#" (click)="item.isedit = false" class="btn btn-danger">Cancel</a></td>
+        <td><button (click)="updaterecord(item)" class="btn btn-primary">Update</button></td>
+        <td><button (click)="item.isedit = false" class="btn btn-danger">Cancel</button></td>
     </ng-template>
 </div>

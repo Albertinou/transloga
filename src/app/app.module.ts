@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 import { PricesService } from './services/prices.service';
 import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
+import { PricetableComponent } from './pricetable/pricetable.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     NgbdCarouselBasic,
     PricesComponent,
     CardsComponent,
-    FooterComponent
+    FooterComponent,
+    PricetableComponent
   ],
   imports: [
     BrowserModule,

@@ -80,10 +80,6 @@ export class PricesComponent implements OnInit {
           destinationPort: e.payload.doc.data()['destinationPort']
         }
       });
-      
-      
-      
     });
   }
-
 }
