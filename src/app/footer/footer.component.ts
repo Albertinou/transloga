@@ -1,5 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from 'firebase/app';
+
 
 
 @Component({
@@ -22,5 +24,9 @@ export class FooterComponent implements OnInit {
     this.auth.signInWithEmailAndPassword(this.email,this.password)
     .catch(error => console.log(error.code))
     .then(res => console.log(res));
+  }
+
+  logout(){
+    this.auth.signOut();
   }
 }

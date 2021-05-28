@@ -36,7 +36,7 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    NgxPageScrollCoreModule.forRoot({duration: 1000})
+    NgxPageScrollCoreModule.forRoot({duration: 2000})
    
     
   ],

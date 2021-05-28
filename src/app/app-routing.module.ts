@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PricesComponent } from './prices/prices.component';
-import { CardsComponent } from './cards/cards.component';
-import { PricetableComponent } from './pricetable/pricetable.component';
+import { AdminGuard } from './guards/admin.guard'
+
+
 
 const routes: Routes = [
-  { path: 'cards', component:CardsComponent},
-  { path: 'prices', component:PricesComponent},
-  { path: 'pricetable', component:PricetableComponent}
+ { path: 'prices', component: PricesComponent, canActivate: [AdminGuard]},
+ { path: '', redirectTo: '/' ,pathMatch: 'full'},
 
 ];
 
