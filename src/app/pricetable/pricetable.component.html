@@ -13,8 +13,8 @@
             <tr *ngFor="let item of price">
                 <td>{{ item.loadingPort }}</td>
                 <td>{{ item.destinationPort }}</td>
-                <td>{{ item.priceTwenty | currency:'USD':true:'4.0-2'}}</td>
-                <td>{{ item.priceFourty | currency:'USD':true:'4.0-2'}}</td>
+                <td>{{ item.priceTwenty | currency:'USD':string:'4.0-2'}}</td>
+                <td>{{ item.priceFourty | currency:'USD':string:'4.0-2'}}</td>
                 <td>{{ item.company }}</td>
             </tr>
         </tbody>
