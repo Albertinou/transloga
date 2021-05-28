@@ -1,2 +1,22 @@
-
-
+<div class="container" id="pricetable">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Port Of Loading</th>
+                <th scope="col">Port Of Destination</th>
+                <th scope="col">20 Foot Price</th>
+                <th scope="col">40 Foot Price</th>
+                <th scope="col">Company Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of price">
+                <td>{{ item.loadingPort }}</td>
+                <td>{{ item.destinationPort }}</td>
+                <td>{{ item.priceTwenty | currency:'USD':true:'4.0-2'}}</td>
+                <td>{{ item.priceFourty | currency:'USD':true:'4.0-2'}}</td>
+                <td>{{ item.company }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
