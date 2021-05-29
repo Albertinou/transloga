@@ -29,7 +29,7 @@ async onSignin(email:string, password:string){
 }
 
 handleLogout(){
-
+  this.isSignedIn = false
 }
 
 logout(){

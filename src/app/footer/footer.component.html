@@ -38,7 +38,7 @@
           <p><i class="fas fa-phone me-3"></i> +370 640 21244</p>
 
         </div>
-        <form
+        <form *ngIf="!isSignedIn"
           class="text-center border border-light col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">Admin login</h6>
           <input name="email" #email type="email" id="defaultLoginFormEmail" class="form-control mb-4"
@@ -49,10 +49,10 @@
           <button  (click)="onSignin(email.value, password.value)" mdbBtn block="true" class="btn btn-primary" type="submit">
             Login
           </button>
-          <button (click)="logout()" mdbBtn block="true" class="btn btn-primary" type="submit">Logout</button>
-          
-           
         </form>
+        <form *ngIf="isSignedIn" class="text-center border border-light col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <button (click)="logout()" mdbBtn block="true" class="btn btn-primary" type="submit">Logout</button>
+      </form>
       </div>
     </div>
   </section>
