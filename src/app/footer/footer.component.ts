@@ -1,6 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import firebase from 'firebase/app';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 
 
@@ -11,22 +10,31 @@ import firebase from 'firebase/app';
 })
 export class FooterComponent implements OnInit {
 
-  email : string;
-  password: string;
+@Output() isLogout = new EventEmitter<void>()
+ isSignedIn = false
 
-  constructor(public auth: AngularFireAuth) { }
+  constructor( public authService: AuthService) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('user')!== null)
+    this.isSignedIn = true
+    else 
+    this.isSignedIn= false
 }
 
-  login(){
-    
-    this.auth.signInWithEmailAndPassword(this.email,this.password)
-    .catch(error => console.log(error.code))
-    .then(res => console.log(res));
-  }
+async onSignin(email:string, password:string){
+  await this.authService.signin(email,password)
+  if(this.authService.isLoggedIn)
+  this.isSignedIn = true
+}
 
-  logout(){
-    this.auth.signOut();
-  }
+handleLogout(){
+
+}
+
+logout(){
+  this.authService.logout()
+  this.isLogout.emit()
+}
+
 }

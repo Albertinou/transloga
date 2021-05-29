@@ -16,6 +16,7 @@ import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
 import { PricetableComponent } from './pricetable/pricetable.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
    
     
   ],
-  providers: [PricesService],
+  providers: [PricesService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
