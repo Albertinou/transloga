@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PricetableComponent } from './pricetable/pricetable.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { AuthService } from './services/auth.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -37,9 +38,9 @@ import { AuthService } from './services/auth.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    NgxPageScrollCoreModule.forRoot({duration: 2000})
-   
-    
+    NgxPageScrollCoreModule.forRoot({duration: 2000}),
+    FontAwesomeModule,
+
   ],
   providers: [PricesService, AuthService],
   bootstrap: [AppComponent]

@@ -28,9 +28,7 @@ async onSignin(email:string, password:string){
   this.isSignedIn = true
 }
 
-handleLogout(){
-  this.isSignedIn = false
-}
+
 
 logout(){
   this.authService.logout()

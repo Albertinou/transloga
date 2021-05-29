@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
+import { faShip } from '@fortawesome/free-solid-svg-icons';
+import { faTrain } from '@fortawesome/free-solid-svg-icons';
+import { faTruck } from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: 'app-cards',
@@ -7,6 +13,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
+  faPlane = faPlane;
+  faShip = faShip;
+  faTrain = faTrain;
+  faTruck = faTruck;
   constructor() { }
 
   ngOnInit(): void {
