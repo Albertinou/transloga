@@ -42,8 +42,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of price">
-                <ng-container 
-                    [ngTemplateOutlet]="item.isedit == true ? editable : display"
+                <ng-container [ngTemplateOutlet]="item.isedit == true ? editable : display"
                     [ngTemplateOutletContext]="{ item: item }">
                 </ng-container>
             </tr>
@@ -53,7 +52,7 @@
 
     <ng-template #display let-item="item">
 
-        <td>{{ item.loadingPort  }}</td>
+        <td>{{ item.loadingPort }}</td>
         <td>{{ item.destinationPort }}</td>
         <td>{{ item.priceTwenty | currency:'USD':string:'4.0-2'}}</td>
         <td>{{ item.priceFourty | currency:'USD':string:'4.0-2'}}</td>

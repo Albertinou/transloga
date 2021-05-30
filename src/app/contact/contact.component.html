@@ -1,21 +1,24 @@
 <form class="container">
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        a matter of hours to help you.</p>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Name</label>
-        <input type="text" class="form-control" [(ngModel)]="name" placeholder="Enter your name" name="name">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Company name</label>
-        <input type="text" class="form-control" [(ngModel)]="companyName" placeholder="Enter yout company name" name="companyName">
-      </div>
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us
+    directly. Our team will come back to you within
+    a matter of hours to help you.</p>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Name</label>
+      <input type="text" class="form-control" [(ngModel)]="name" placeholder="Enter your name" name="name">
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Your message</label>
-        <textarea class="form-control" [(ngModel)]="message" id="exampleFormControlTextarea1" rows="3"  name="message" placeholder="Enter your message here"></textarea>
-      </div>
-    
-    <button type="submit" (click)="CreateRecord()" class="btn btn-primary">Send</button>
-  </form>
+    <div class="form-group col-md-6">
+      <label>Company name</label>
+      <input type="text" class="form-control" [(ngModel)]="companyName" placeholder="Enter yout company name"
+        name="companyName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Your message</label>
+    <textarea class="form-control" [(ngModel)]="message" id="exampleFormControlTextarea1" rows="3" name="message"
+      placeholder="Enter your message here"></textarea>
+  </div>
+
+  <button type="submit" (click)="CreateRecord()" class="btn btn-primary">Send</button>
+</form>
