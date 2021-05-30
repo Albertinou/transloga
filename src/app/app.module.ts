@@ -18,6 +18,8 @@ import { PricetableComponent } from './pricetable/pricetable.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { AuthService } from './services/auth.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BannerComponent } from './banner/banner.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PricesComponent,
     CardsComponent,
     FooterComponent,
-    PricetableComponent
+    PricetableComponent,
+    BannerComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
