@@ -20,6 +20,7 @@ import { AuthService } from './services/auth.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BannerComponent } from './banner/banner.component';
 import { ContactComponent } from './contact/contact.component';
+import { ContactService } from './services/contact.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { ContactComponent } from './contact/contact.component';
     FontAwesomeModule,
 
   ],
-  providers: [PricesService, AuthService],
+  providers: [PricesService, AuthService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
