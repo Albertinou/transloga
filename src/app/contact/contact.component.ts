@@ -10,6 +10,7 @@ export class ContactComponent implements OnInit {
   contact: any;
   name: string;
   companyName: string;
+  email: string;
   message: string;
 
 
@@ -19,12 +20,14 @@ export class ContactComponent implements OnInit {
     let record = {};
     record['name'] = this.name;
     record['companyName'] = this.companyName;
+    record['email'] = this.email;
     record['message'] = this.message;
 
     this.contactservice.create_newcontact(record).then(res => {
       
       this.name = "";
       this.companyName= "";
+      this.email= "";
       this.message= "";
       console.log(res);
     }).catch(error => {
